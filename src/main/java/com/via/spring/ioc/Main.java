@@ -16,6 +16,8 @@ import org.springframework.core.io.Resource;
  * @author via
  * 
  * @date 25 Oct 2022
+ * 
+ * @apiNote managing beans with Spring BeanFactory
  */
 public class Main {
 
