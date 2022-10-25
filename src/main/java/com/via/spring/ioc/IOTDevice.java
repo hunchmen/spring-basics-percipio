@@ -17,6 +17,10 @@ public class IOTDevice {
     String device = "Air Conditioner";
     String description = "Temperature sensor";
 
+    public IOTDevice() {
+        System.out.println("Object created successfully!");
+    }
+
     public String getDevice() {
         return device;
     }

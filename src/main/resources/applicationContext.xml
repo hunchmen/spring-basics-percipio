@@ -9,5 +9,6 @@
 
     <bean id="myIOTDeviceBean" class="com.via.spring.ioc.IOTDevice" />
     <alias name="myIOTDeviceBean" alias="myBean"/>
+    <bean name="otherIOTDeviceBean" class="com.via.spring.ioc.IOTDevice"></bean>
 
 </beans>
