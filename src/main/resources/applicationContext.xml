@@ -7,8 +7,10 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="myIOTDeviceBean" class="com.via.spring.ioc.IOTDevice" />
-    <alias name="myIOTDeviceBean" alias="myBean"/>
-    <bean name="otherIOTDeviceBean" class="com.via.spring.ioc.IOTDevice"></bean>
+    <bean id="myIOTDeviceBean" class="com.via.spring.ioc.IOTDevice" 
+        init-method="initBean" destroy-method="destroyBean"/>
+
+    <bean name="otherIOTDeviceBean" class="com.via.spring.ioc.IOTDevice" 
+        init-method="initBean" destroy-method="destroyBean"/>
 
 </beans>

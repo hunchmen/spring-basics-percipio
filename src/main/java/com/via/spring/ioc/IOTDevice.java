@@ -6,12 +6,15 @@
  */
 package com.via.spring.ioc;
 
+import org.springframework.stereotype.Component;
+
 /**
  * 
  * @author via
  * 
  * @date 25 Oct 2022
  */
+// @Component
 public class IOTDevice {
 
     String device = "Air Conditioner";
@@ -41,6 +44,18 @@ public class IOTDevice {
     public String toString() {
         return "IOTDevice {" + "device = '" + device + "!\'"
                 + ", description = '" + description + "\'" + '}';
+    }
+
+    public void initBean() throws Exception {
+        System.out.println(
+                "IOTDevice bean has been instantiated. Inside the initBean() "
+                        + "method.");
+    }
+
+    public void destroyBean() throws Exception {
+        System.out.println(
+                "IOTDevice bean has been destroyed. Inside the destroyBean() "
+                + "method.");
     }
 
 }
