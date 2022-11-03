@@ -20,6 +20,19 @@ public class Car {
     int combinedFuelEconomy;
     Engine engine;
 
+    public Car() {
+
+    }
+
+    public Car(String type, String model, double price, int combinedFuelEconomy,
+            Engine engine) {
+        this.type = type;
+        this.model = model;
+        this.price = price;
+        this.combinedFuelEconomy = combinedFuelEconomy;
+        this.engine = engine;
+    }
+
     public String getType() {
         return type;
     }
