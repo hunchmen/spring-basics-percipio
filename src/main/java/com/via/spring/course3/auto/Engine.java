@@ -20,14 +20,18 @@ public class Engine {
     String cylinderConfig;
     String recommendedFuel;
 
-    // public Engine(int horsepower, int maxRPM, float displacement,
-    // String cylinderConfig, String recommendedFuel) {
-    // this.horsepower = horsepower;
-    // this.maxRPM = maxRPM;
-    // this.displacement = displacement;
-    // this.cylinderConfig = cylinderConfig;
-    // this.recommendedFuel = recommendedFuel;
-    // }
+    public Engine() {
+
+    }
+
+    public Engine(int horsepower, int maxRPM, float displacement,
+            String cylinderConfig, String recommendedFuel) {
+        this.horsepower = horsepower;
+        this.maxRPM = maxRPM;
+        this.displacement = displacement;
+        this.cylinderConfig = cylinderConfig;
+        this.recommendedFuel = recommendedFuel;
+    }
 
 
 
