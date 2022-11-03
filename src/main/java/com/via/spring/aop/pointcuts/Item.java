@@ -61,8 +61,8 @@ public class Item {
      */
     @Override
     public String toString() {
-        return "Itemm{" + "itemId=" + itemId + ", itemName='" + itemName + '\''
-                + ", itemPrice=" + itemPrice + ", availableQuanitity="
+        return "Item{" + "itemId=" + itemId + ", itemName='" + itemName + '\''
+                + ", itemPrice=" + itemPrice + ", availableQuantity="
                 + availableQuantity + '}';
     }
 

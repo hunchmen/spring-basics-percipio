@@ -15,8 +15,12 @@ package com.via.spring.aop.config;
 public class AspectConfig {
 
     public void printLogo() {
-        System.out.println("\n************************************\n"
+        System.out.println("\n*************************************\n"
                 + "*************V I A J C C*************\n"
                 + "*************************************");
+    }
+
+    public void printTrademark() {
+        System.out.println("******* Trademark by Valentin ALberto *******");
     }
 }
