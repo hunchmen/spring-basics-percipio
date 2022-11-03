@@ -7,24 +7,19 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:annotation-config />
+    
     <bean id="myIOTDeviceBean" class="com.via.spring.ioc.IOTDevice" 
         init-method="initBean" destroy-method="destroyBean"/>
 
     <bean name="otherIOTDeviceBean" class="com.via.spring.ioc.IOTDevice" 
         init-method="initBean" destroy-method="destroyBean"/>
         
-    <bean id="carBean" class="com.via.spring.course3.auto.Car" autowire="byType">
+    <bean id="carBean" class="com.via.spring.course3.auto.Car">
         <property name="type" value="Sedan"/>
         <property name="model" value="BMW 740 2021"/>
         <property name="price" value="88000"/>
         <property name="combinedFuelEconomy" value="25" />
-        <!-- <property name="engine" ref="engineBean" /> -->
-        
-        <!-- <constructor-arg index="0" name="type" value="Sedan"/>
-        <constructor-arg index="1" name="model" value="BMW 740 2021"/>
-        <constructor-arg index="2" name="price" value="88000.0"/>
-        <constructor-arg index="3" name="combinedFuelEconomy" value="25" />
-        <constructor-arg index="4" name="engine" ref="engineBean" /> -->
     </bean>
     
     <bean id="engineBean" class="com.via.spring.course3.auto.Engine">
@@ -33,12 +28,6 @@
         <property name="displacement" value="3.0"/>
         <property name="cylinderConfig" value="I-6" />
         <property name="recommendedFuel"  value="premium unleaded"/>
-         
-        <!-- <constructor-arg index="0" name="horsepower" type="Integer" value="335"/>
-        <constructor-arg index="1" name="maxRPM" type="Integer" value="5500"/>
-        <constructor-arg index="2" name="displacement" type="Float" value="3.0"/>
-        <constructor-arg index="3" name="cylinderConfig" value="I-6" />
-        <constructor-arg index="4" name="recommendedFuel"  value="premium unleaded"/> -->
     </bean>
 
 </beans>

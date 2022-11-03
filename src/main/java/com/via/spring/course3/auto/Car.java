@@ -6,6 +6,8 @@
  */
 package com.via.spring.course3.auto;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 /**
  * 
  * @author via
@@ -18,10 +20,12 @@ public class Car {
     String model;
     double price;
     int combinedFuelEconomy;
+
+    @Autowired
     Engine engine;
 
     public Car() {
-
+        System.out.println("Default constructor in Car has been used.");
     }
 
     public Car(String type, String model, double price, int combinedFuelEconomy,
@@ -31,6 +35,8 @@ public class Car {
         this.price = price;
         this.combinedFuelEconomy = combinedFuelEconomy;
         this.engine = engine;
+
+        System.out.println("Parameterized constructor in Car has been used.");
     }
 
     public String getType() {
@@ -71,6 +77,7 @@ public class Car {
 
     public void setEngine(Engine engine) {
         this.engine = engine;
+        System.out.println("Engine setter access in Car");
     }
 
     /*
