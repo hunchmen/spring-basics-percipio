@@ -6,7 +6,10 @@
  */
 package com.via.spring.course3.auto;
 
+import java.util.List;
+import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 /**
  * 
@@ -23,18 +26,25 @@ public class Car {
 
     @Autowired
     Engine engine;
+    Gearbox gearbox;
+    List<String> notes;
+    Set<Seats> availableSeatOptions;
 
     public Car() {
         System.out.println("Default constructor in Car has been used.");
     }
 
     public Car(String type, String model, double price, int combinedFuelEconomy,
-            Engine engine) {
+            Engine engine, Gearbox gearbox, List<String> notes,
+            Set<Seats> seats) {
         this.type = type;
         this.model = model;
         this.price = price;
         this.combinedFuelEconomy = combinedFuelEconomy;
         this.engine = engine;
+        this.gearbox = gearbox;
+        this.notes = notes;
+        this.availableSeatOptions = seats;
 
         System.out.println("Parameterized constructor in Car has been used.");
     }
@@ -78,6 +88,31 @@ public class Car {
     public void setEngine(Engine engine) {
         this.engine = engine;
         System.out.println("Engine setter access in Car");
+    }
+
+    public Gearbox getGearbox() {
+        return gearbox;
+    }
+
+    @Autowired(required = false)
+    public void setGearbox(Gearbox gearbox) {
+        this.gearbox = gearbox;
+    }
+
+    public List<String> getNotes() {
+        return notes;
+    }
+
+    public void setNotes(List<String> notes) {
+        this.notes = notes;
+    }
+
+    public Set<Seats> getAvailableSeatOptions() {
+        return availableSeatOptions;
+    }
+
+    public void setAvailableSeatOptions(Set<Seats> availableSeatOptions) {
+        this.availableSeatOptions = availableSeatOptions;
     }
 
     /*
