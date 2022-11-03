@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config />
+    
+    <bean id="myIOTDeviceBean" class="com.via.spring.ioc.IOTDevice" 
+        init-method="initBean" destroy-method="destroyBean"/>
+
+    <bean name="otherIOTDeviceBean" class="com.via.spring.ioc.IOTDevice" 
+        init-method="initBean" destroy-method="destroyBean"/>
+        
+    <bean id="carBean" class="com.via.spring.course3.auto.Car">
+        <property name="type" value="Sedan"/>
+        <property name="model" value="BMW 740 2021"/>
+        <property name="price" value="88000"/>
+        <property name="combinedFuelEconomy" value="25" />
+    </bean>
+    
+    <bean id="engineBean" class="com.via.spring.course3.auto.Engine">
+        <property name="horsepower" value="335"/>
+        <property name="maxRPM" value="5500"/>
+        <property name="displacement" value="3.0"/>
+        <property name="cylinderConfig" value="I-6" />
+        <property name="recommendedFuel"  value="premium unleaded"/>
+    </bean>
+
+</beans>
