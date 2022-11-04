@@ -6,20 +6,21 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop.xsd">
+    
+    <aop:aspectj-autoproxy/>
 
     <bean id="myPointcutAspect" class="com.via.spring.aop.config.AspectConfig"/>
-    
-    <aop:config>
+
+    <!--  <aop:config>
         <aop:aspect id="myAdvice" ref="myPointcutAspect">
             
             <aop:pointcut id="myPointcutExpression" 
-             expression="execution(public void com.via.spring.aop.pointcuts.Item.*(..))"/>
-             <!-- expression="execution(* com.via.spring.aop.pointcuts.Item.*(..))"/> -->
+             expression="execution(* com.via.spring.aop.pointcuts.Item.*(..))"/>
+             expression="execution(* com.via.spring.aop.pointcuts.Item.*(..))"/>
             <aop:before pointcut-ref="myPointcutExpression" method="printLogo"/>
-            <aop:after pointcut-ref="myPointcutExpression" method="printTrademark"/>
         </aop:aspect>
-    </aop:config>
-    
+    </aop:config> -->
+
     <bean id="itemBeanOne" class="com.via.spring.aop.pointcuts.Item">
         <property name="itemId" value="102" />
         <property name="itemName" value="Bread" />
@@ -27,5 +28,20 @@
         <property name="availableQuantity" value="10" />
     </bean>
     
+    <bean id="itemBeanTwo" class="com.via.spring.aop.pointcuts.Item">
+        <property name="itemId" value="101" />
+        <property name="itemName" value="Milk" />
+        <property name="itemPrice" value="3.25" />
+        <property name="availableQuantity" value="5" />
+    </bean>
+    
+    <bean id="listBean" class="com.via.spring.aop.pointcuts.ItemList">
+        <property name="items">
+            <list>
+                <ref bean="itemBeanOne"/>
+                <ref bean="itemBeanTwo"/>
+            </list>
+        </property>
+    </bean>
 
 </beans>
