@@ -51,4 +51,13 @@ public class ItemList {
         System.out
                 .println("--------------------------------------------------");
     }
+
+    public void addItemToList(Item item) {
+        this.items.add(item);
+    }
+
+    public void addItemToListAtIndex(int index, Item item) {
+        this.items.add(index, item);
+    }
+
 }

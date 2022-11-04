@@ -35,10 +35,27 @@ public class Main {
 
         ItemList myList = (ItemList) context.getBean("listBean");
 
+        Item item3 = new Item();
+        item3.setItemId(110);
+        item3.setItemName("Butter");
+        item3.setItemPrice(5.99f);
+        item3.setAvailableQuantity(8);
+
+        Item item4 = new Item();
+        item4.setItemId(113);
+        item4.setItemName("Honey");
+        item4.setItemPrice(7.00f);
+        item4.setAvailableQuantity(4);
+
+        myList.addItemToList(item3);
+        myList.addItemToListAtIndex(0, item4);
+
         item1.printItemDetails();
         item2.printItemDetails();
 
         myList.printNumItems();
         myList.displayItemList();
+
+
     }
 }
